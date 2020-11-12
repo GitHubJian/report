@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Apply 360 with Chrome-WebKit-Core -->
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Disable Baidu-Transcoding -->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="Sogou Feed" />
+
+    <!-- # 搜索事业部 - 埋点统计脚本 - 种子代码 # -->
+    <meta name="lx:productid" content="productid" />
+    <meta name="lx:typepage" content="typepage" />
+    <meta name="lx:pv" content="pv" />
+    <script type="text/javascript">
+      !(function(win, doc, ns) {
+        var cacheFunName = '_SogouAReport'
+        win[cacheFunName] = ns
+        if (!win[ns]) {
+          var _LX = function() {
+            _LX.q.push(arguments)
+            return _LX
+          }
+          _LX.q = _LX.q || []
+          _LX.l = +new Date()
+          win[ns] = _LX
+        }
+      })(window, document, 'LXAnalytics')
+    </script>
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <script>
+      window.LXAnalytics('MV', '1')
+      window.LXAnalytics('MC', '1')
+    </script>
+  </body>
+</html>
